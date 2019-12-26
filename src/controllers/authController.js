@@ -7,6 +7,7 @@ const router = express.Router();
 router.post('/register', async (req, res) => {
     try {
         const user = await User.create(req.body);
+        user.password = undefined;
         return res.send({ user });
     }
     catch (error) {
