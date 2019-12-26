@@ -10,4 +10,6 @@ app.get('/', (request, response) => {
     response.send('ok');
 });
 
+require ('./controllers/authController')(app);
+
 app.listen(3000);
