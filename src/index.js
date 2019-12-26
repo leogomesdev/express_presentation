@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', (request, response) => {
-    response.send('OK');
+    response.send('ok');
 });
 
 app.listen(3000);
