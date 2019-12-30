@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://10.13.0.5/skills2", {
+mongoose.connect("mongodb://" + process.env.MONGO_HOST + "/" + process.env.DATABASE_NAME, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true
