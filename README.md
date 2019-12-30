@@ -14,7 +14,7 @@ sudo apt install nodejs
 
 ## Usage
 
-Copy and define the envs (host and database name for MongoDB):
+Copy and define the envs (by editing the new .env file):
 ````bash
 cp -v .env.example .env
 ````

@@ -7,11 +7,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 if (process.env.NODE_ENV !== 'production') {
-    require('dotenv/config');
+  require('dotenv/config');
 }
 
 app.get('/', (request, response) => {
-    response.send('ok');
+  response.send('ok');
 });
 
 require('./controllers/authController')(app);
