@@ -15,5 +15,6 @@ app.get('/', (request, response) => {
 });
 
 require('./controllers/authController')(app);
+require('./controllers/skillsController')(app);
 
 app.listen(3000);
