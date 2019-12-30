@@ -8,7 +8,7 @@ Presentation about NodeJS and Express usage for all the company
 
 ### Node + npm installation (for Linux):
 ````bash
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
 sudo apt install nodejs
 ````
 
