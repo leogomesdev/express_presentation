@@ -2,37 +2,180 @@
 	"info": {
 		"_postman_id": "03556c9a-19b0-4042-8437-92d68ab8176e",
 		"name": "skills",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "register",
+			"name": "register (a new user)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}"
+				},
+				"url": "http://localhost:3000/skills"
+			},
+			"response": []
+		},
+		{
+			"name": "authenticate (get token to use Skills CRUD)",
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
-						"value": "application/json",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"leonardo.delfica@gmail.com\",\n\t\"password\": \"123456\"\n}"
+				},
+				"url": "http://localhost:3000/auth/authenticate"
+			},
+			"response": []
+		},
+		{
+			"name": "skills (list)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMGE1ZTkwMmM5NmVlN2ZhOGFhNWYyNSIsImlhdCI6MTU3Nzc0MzI1MSwiZXhwIjoxNTc3ODI5NjUxfQ.4KSujNSYdSMccTzu1xLY9YI8vgy2777Axq9uBRmJL7U",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"Leonardo Gomes da Sila\",\n\t\"email\": \"leonardo.delfica@gmail.com\",\n\t\"password\": \"123456\"\n}"
+					"raw": "{}"
 				},
-				"url": {
-					"raw": "http://localhost:3000/auth/register",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"auth",
-						"register"
-					]
-				}
+				"url": "http://localhost:3000/skills"
+			},
+			"response": []
+		},
+		{
+			"name": "skills (show)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMGE1ZTkwMmM5NmVlN2ZhOGFhNWYyNSIsImlhdCI6MTU3Nzc0MzI1MSwiZXhwIjoxNTc3ODI5NjUxfQ.4KSujNSYdSMccTzu1xLY9YI8vgy2777Axq9uBRmJL7U",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}"
+				},
+				"url": "http://localhost:3000/skills/5e0aae62c6a67b5922aeac30"
+			},
+			"response": []
+		},
+		{
+			"name": "skills (create)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMGE1ZTkwMmM5NmVlN2ZhOGFhNWYyNSIsImlhdCI6MTU3Nzc0MzI1MSwiZXhwIjoxNTc3ODI5NjUxfQ.4KSujNSYdSMccTzu1xLY9YI8vgy2777Axq9uBRmJL7U",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"test\",\n\t\"level\": \"junior\"\n}"
+				},
+				"url": "http://localhost:3000/skills"
+			},
+			"response": []
+		},
+		{
+			"name": "skills (update)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMGE1ZTkwMmM5NmVlN2ZhOGFhNWYyNSIsImlhdCI6MTU3Nzc0MzI1MSwiZXhwIjoxNTc3ODI5NjUxfQ.4KSujNSYdSMccTzu1xLY9YI8vgy2777Axq9uBRmJL7U"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"New task name\"\n}"
+				},
+				"url": "http://localhost:3000/skills/5e0aae62c6a67b5922aeac30"
+			},
+			"response": []
+		},
+		{
+			"name": "skills (delete)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMGE1ZTkwMmM5NmVlN2ZhOGFhNWYyNSIsImlhdCI6MTU3Nzc0MzI1MSwiZXhwIjoxNTc3ODI5NjUxfQ.4KSujNSYdSMccTzu1xLY9YI8vgy2777Axq9uBRmJL7U",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"test\",\n\t\"level\": \"junior\"\n}"
+				},
+				"url": "http://localhost:3000/skills/5e0aa9c147f6514817860370"
 			},
 			"response": []
 		}
