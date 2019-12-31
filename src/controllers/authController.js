@@ -1,31 +1,20 @@
 const express = require('express');
 const User = require('../models/user');
 const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
 
 const router = express.Router();
 
-function generateToken(params = {}) { // move to a Model
-  return jwt.sign(params, process.env.JWT_SECRET, {
-    expiresIn: 86400,
-  });
-}
-
 router.post('/register', async (req, res) => {
-  const { email } = req.body;
-  try {
-    if (await User.findOne({ email })) { // change to https://github.com/blakehaswell/mongoose-unique-validator
-      return res.status(400).send({ error: "Email is already in use" });
+  var user = new User(req.body);
+
+  await user.save(function (error) {
+    if (error) {
+      return res.status(400).send(error);
     }
-    const user = await User.create(req.body);
     user.password = undefined;
 
-    res.send({ user, token: generateToken({ id: user.id }) });
-  }
-  catch (error) {
-    console.error(error);
-    return res.status(400).send({ error: "Error while registering user" });
-  }
+    res.send({ user, token: user.generateToken() });
+  });
 });
 
 router.post('/authenticate', async (req, res) => {
@@ -42,7 +31,7 @@ router.post('/authenticate', async (req, res) => {
 
   user.password = undefined;
 
-  res.send({ user, token: generateToken({ id: user.id }) });
+  res.send({ user, token: user.generateToken() });
 });
 
 module.exports = app => app.use('/auth', router);

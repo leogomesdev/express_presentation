@@ -1,20 +1,22 @@
 const mongoose = require('../database');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+var uniqueValidator = require('mongoose-unique-validator');
 
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
-    require: true,
+    required: true,
   },
   email: {
     type: String,
-    require: true,
+    required: true,
     unique: true,
     lowercase: true,
   },
   password: {
     type: String,
-    require: true,
+    required: true,
     select: false,
   },
   createdAt: {
@@ -23,11 +25,19 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
+UserSchema.plugin(uniqueValidator);
+
 UserSchema.pre('save', async function (next) {
   const hash = await bcrypt.hash(this.password, 10);
   this.password = hash;
   next();
 });
+
+UserSchema.methods.generateToken = function () {
+  return jwt.sign({ id: this.id }, process.env.JWT_SECRET, {
+    expiresIn: 86400,
+  });
+};
 
 const User = mongoose.model('User', UserSchema);
 
