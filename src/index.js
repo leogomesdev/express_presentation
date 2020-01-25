@@ -10,10 +10,9 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv/config');
 }
 
-app.get('/', (request, response) => {
-  response.send('ok');
-});
-
 require('./controllers/index')(app);
 
-app.listen(3000);
+const port = process.env.APP_PORT || 3000;
+app.listen(port, () => {
+  console.log('\n Server started - http://localhost:' + port + '/ \n');
+});
