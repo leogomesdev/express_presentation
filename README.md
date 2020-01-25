@@ -1,6 +1,8 @@
 # Express Presentation
 
-This is an example used for a presentation on using Express (a Node.js Framework).
+This application includes creation and authentication for User and CRUD operations for Skills.
+
+This is an example used for a presentation on using Express (a Node.js Framework) on December/2019.
 
 ## Requirements
 
@@ -20,6 +22,7 @@ sudo apt install nodejs
 - [Express Framework](https://expressjs.com)
 - [Mongoose](https://mongoosejs.com)
 - [JWT](https://jwt.io) for API Authentication
+- [JavaScript Standard Style](https://github.com/standard/standard), [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/)
 
 ## Usage
 
