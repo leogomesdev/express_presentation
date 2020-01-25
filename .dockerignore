@@ -1,0 +1,5 @@
+.env.example
+docker-compose.*
+docs
+README.md
+node_modules

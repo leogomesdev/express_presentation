@@ -1,0 +1,12 @@
+version: "2"
+services:
+  node:
+    build: .
+    container_name: node-express-presentation
+    command: bash -c "npm install && npm start"
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+    working_dir: '/app'
