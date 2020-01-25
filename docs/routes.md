@@ -37,7 +37,7 @@ Register a new user.
 
 ### POST /auth/authenticate
 
-Create a valid token for an user (by passing correct user and password).
+Create a valid token for the user (by providing correct user and password).
 
 - Request body:
 
@@ -69,7 +69,7 @@ Create a valid token for an user (by passing correct user and password).
 
 ## Skills CRUD Operations
 
-To use this endpoints (/skills) is necessary to:
+To use this endpoint (/skills) is necessary to:
 
 1) Copy a token [#Register and Authentication](See Register and Authentication section)
 2) Add a new HTTP Header, with Key: Authorization and Value: Bearer my_sample_token

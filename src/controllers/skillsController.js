@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
   var skill = new Skill(req.body);
 
-  await skill.save(function (error) {
+  await skill.save(function(error) {
     if (error) {
       return res.status(400).send(error);
     }
@@ -31,14 +31,18 @@ router.get('/:id', validateIdMiddleware, async (req, res) => {
 });
 
 router.put('/:id', validateIdMiddleware, async (req, res) => {
-  await Skill.findByIdAndUpdate(req.params.id, { $set: req.body },
-    { runValidators: true, context: 'query', new: true }).then((skill) => {
+  await Skill.findByIdAndUpdate(
+    req.params.id,
+    { $set: req.body },
+    { runValidators: true, context: 'query', new: true }
+  )
+    .then(skill => {
       if (!skill) {
         return res.status(404).send();
       }
       res.send({ skill });
     })
-    .catch((error) => {
+    .catch(error => {
       return res.status(400).send(error);
     });
 });

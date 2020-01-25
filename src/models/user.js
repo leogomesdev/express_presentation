@@ -27,13 +27,13 @@ const UserSchema = new mongoose.Schema({
 
 UserSchema.plugin(uniqueValidator);
 
-UserSchema.pre('save', async function (next) {
+UserSchema.pre('save', async function(next) {
   const hash = await bcrypt.hash(this.password, 10);
   this.password = hash;
   next();
 });
 
-UserSchema.methods.generateToken = function () {
+UserSchema.methods.generateToken = function() {
   return jwt.sign({ id: this.id }, process.env.JWT_SECRET, {
     expiresIn: 86400,
   });

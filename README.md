@@ -1,6 +1,6 @@
 # Express Presentation
 
-Presentation about Express (a Node.js Framework) usage for all the company
+This is an example used for a presentation on using Express (a Node.js Framework).
 
 ## Requirements
 
