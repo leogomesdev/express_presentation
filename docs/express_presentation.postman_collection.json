@@ -1,17 +1,14 @@
 {
 	"info": {
 		"_postman_id": "03556c9a-19b0-4042-8437-92d68ab8176e",
-		"name": "skills",
+		"name": "express_presentation",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "register (a new user)",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
@@ -22,9 +19,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{}"
+					"raw": "{\n\t\"name\": \"Leonardo Gomes da Silva\",\n\t\"email\": \"leonardo.delfica@gmail.com\",\n\t\"password\": \"123456\"\n}"
 				},
-				"url": "http://localhost:3000/skills"
+				"url": "http://localhost:3000/auth/register"
 			},
 			"response": []
 		},
