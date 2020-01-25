@@ -10,7 +10,13 @@
     "type": "git",
     "url": "git+https://github.com/leogomezzz/express_presentation.git"
   },
-  "keywords": ["Node", "Express", "JWT", "CRUD", "REST"],
+  "keywords": [
+    "Node",
+    "Express",
+    "JWT",
+    "CRUD",
+    "REST"
+  ],
   "author": "Leonardo Gomes da Silva",
   "license": "ISC",
   "dependencies": {
