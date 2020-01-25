@@ -1,5 +1,4 @@
 const mongoose = require('../database');
-//const happyMongooseTimestamps = require('happy-mongoose-timestamps');
 
 const SkillSchema = new mongoose.Schema({
   name: {
@@ -17,11 +16,9 @@ const SkillSchema = new mongoose.Schema({
     default: Date.now
   },
   updatedAt: {
-    type: Date
+    type: 'Date'
   }
-});
-
-//SkillSchema.plugin(happyMongooseTimestamps, {});
+}, { timestamps: true });
 
 const Skill = mongoose.model('Skill', SkillSchema);
 
