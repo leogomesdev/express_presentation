@@ -1,13 +1,17 @@
 {
-  "name": "skills2",
+  "name": "express_presentation",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leogomezzz/express_presentation.git"
+  },
+  "keywords": ["Node", "Express", "JWT", "CRUD", "REST"],
+  "author": "Leonardo Gomes da Silva",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -31,5 +35,5 @@
     "eslint-plugin-standard": "^4.0.1",
     "prettier": "^1.19.1"
   },
-  "description": ""
+  "description": "A CRUD using REST API and JWT"
 }
